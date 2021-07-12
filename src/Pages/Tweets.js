@@ -1,5 +1,5 @@
 // TODO : useState를 react로 부터 import 합니다.
-import React, { /* TODO */ } from 'react';
+import React /* TODO */ from 'react';
 import Footer from '../Footer';
 import Tweet from '../Components/Tweet';
 import './Tweets.css';
