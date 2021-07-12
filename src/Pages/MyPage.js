@@ -24,7 +24,7 @@ const MyPage = () => {
         </div>
       </div>
       <ul className="tweets__mypage">
-        <Tweet tweet={filteredTweets[0]}/>
+        <Tweet tweet={filteredTweets[0]} />
         {/* TODO : 주어진 트윗 목록(dummyTweets)중 현재 유져인 parkhacker의 트윗만 보여줘야 합니다. */}
       </ul>
       <Footer />
