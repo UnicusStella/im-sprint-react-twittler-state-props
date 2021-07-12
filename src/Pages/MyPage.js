@@ -6,8 +6,8 @@ import dummyTweets from '../static/dummyData';
 
 const MyPage = () => {
   const filteredTweets = dummyTweets;
+  console.log(dummyTweets);
   // TODO : 주어진 트윗 목록(dummyTweets)중 현재 유져인 parkhacker의 트윗만 보여줘야 합니다.
-
   return (
     <section className="myInfo">
       <div className="myInfo__container">
@@ -25,6 +25,7 @@ const MyPage = () => {
       </div>
       <ul className="tweets__mypage">
         <Tweet tweet={filteredTweets[0]} />
+        console.log(tweetUserNameClass);
         {/* TODO : 주어진 트윗 목록(dummyTweets)중 현재 유져인 parkhacker의 트윗만 보여줘야 합니다. */}
       </ul>
       <Footer />
