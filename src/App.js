@@ -1,7 +1,5 @@
 import React from 'react';
 // TODO : React Router DOM을 설치 후, import 구문을 이용하여 BrowserRouter, Route, Switch 컴포넌트를 불러옵니다.
-import reactDom from 'react-router-dom';
-//test
 
 import Sidebar from './Sidebar';
 import Tweets from './Pages/Tweets';
