@@ -1,1 +1,1 @@
-# im-sprint-react-twittler-state-props
+# react-twittler-state-props
