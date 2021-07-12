@@ -57,7 +57,7 @@ const Tweets = () => {
       <div className="tweet__selectUser"></div>
       <ul className="tweets">
         {/* TODO : 하나의 트윗이 아니라, 주어진 트윗 목록(dummyTweets) 갯수에 맞게 보여줘야 합니다. */}
-        <Tweet tweet={dummyTweets[0]} />
+        <Tweet tweet={dummyTweets.map((el) => el.dummyTweets)} />
       </ul>
       <Footer />
     </React.Fragment>
