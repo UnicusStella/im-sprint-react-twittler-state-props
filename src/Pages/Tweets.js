@@ -7,7 +7,7 @@ import dummyTweets from '../static/dummyData';
 
 const Tweets = () => {
   // TODO : 새로 트윗을 작성하고 전송할 수 있게 useState를 적절히 활용하세요.
-  const [정보목록, 정보목록변경] = useState(dummyTweets);
+  const [유저정보목록, 유저정보목록변경] = useState(dummyTweets);
   const [유저이름, 유저이름변경] = useState('');
   const [내용, 내용변경] = useState('');
 
@@ -23,7 +23,7 @@ const Tweets = () => {
 
     // TODO : Tweet button 엘리먼트 클릭시 작동하는 함수를 완성하세요.
     // 트윗 전송이 가능하게 작성해야 합니다.
-    정보목록변경([tweet, ...정보목록]);
+    유저정보목록변경([tweet, ...유저정보목록]);
   };
 
   const handleChangeUser = (event) => {
@@ -65,7 +65,7 @@ const Tweets = () => {
               <div className="tweetForm__count" role="status">
                 <span className="tweetForm__count__text">
                   {/* TODO : 트윗 총 개수를 보여줄 수 있는 Counter를 작성하세요. */}
-                  total : {정보목록.length}
+                  total : {유저정보목록.length}
                 </span>
               </div>
             </div>
@@ -74,7 +74,7 @@ const Tweets = () => {
               {/* TODO : 작성한 트윗을 전송할 수 있는 button 엘리먼트를 작성하세요. */}
               <button
                 className="tweetForm__submitButton"
-                value={정보목록}
+                value={유저정보목록}
                 onChange={handleButtonClick}
                 onClick={handleButtonClick}
               >
@@ -88,7 +88,7 @@ const Tweets = () => {
       <ul className="tweets">
         {/* TODO : 하나의 트윗이 아니라, 주어진 트윗 목록(dummyTweets) 갯수에 맞게 보여줘야 합니다. */}
         {/* <Tweet tweet={dummyTweets[0]} /> */}
-        {정보목록.map((el) => (
+        {유저정보목록.map((el) => (
           <Tweet tweet={el} key={el.id} />
         ))}
       </ul>
