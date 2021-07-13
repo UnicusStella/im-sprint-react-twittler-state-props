@@ -7,7 +7,7 @@ import dummyTweets from '../static/dummyData';
 
 const Tweets = () => {
   // TODO : 새로 트윗을 작성하고 전송할 수 있게 useState를 적절히 활용하세요.
-  const [submit, setSubmit] = useState('test');
+  const [tweets, setTweets] = useState(dummyTweets);
   const [userinput, setUserinput] = useState('');
   const [message, setMessage] = useState('');
 
@@ -39,7 +39,7 @@ const Tweets = () => {
               <div className="tweetForm__input">
                 <input
                   type="text"
-                  defaultValue="parkhacker"
+                  defaultValue={userinput}
                   placeholder="your username here.."
                   className="tweetForm__input--username"
                   onChange={handleChangeUser}
@@ -48,14 +48,14 @@ const Tweets = () => {
                 <textarea
                   className="tweetForm__input--message"
                   type="text"
-                  value={message}
+                  defaultValue={message}
                   onChange={handleChangeMsg}
                 ></textarea>
               </div>
               <div className="tweetForm__count" role="status">
                 <span className="tweetForm__count__text">
                   {/* TODO : 트윗 총 개수를 보여줄 수 있는 Counter를 작성하세요. */}
-                  total : {dummyTweets.length}
+                  total : {tweets.length}
                 </span>
               </div>
             </div>
@@ -64,8 +64,7 @@ const Tweets = () => {
               {/* TODO : 작성한 트윗을 전송할 수 있는 button 엘리먼트를 작성하세요. */}
               <button
                 className="tweetForm__submitButton"
-                onClick={handleChangeUser}
-                onChange={handleChangeUser}
+                onChange={handleButtonClick}
               >
                 Tweet
               </button>
@@ -77,10 +76,9 @@ const Tweets = () => {
       <ul className="tweets">
         {/* TODO : 하나의 트윗이 아니라, 주어진 트윗 목록(dummyTweets) 갯수에 맞게 보여줘야 합니다. */}
         {/* <Tweet tweet={dummyTweets[0]} /> */}
-
-        {dummyTweets.map((ele) => {
-          return <Tweet tweet={ele} />;
-        })}
+        {tweets.map((el) => (
+          <Tweet tweet={el} key={el.id} />
+        ))}
       </ul>
       <Footer />
     </React.Fragment>
