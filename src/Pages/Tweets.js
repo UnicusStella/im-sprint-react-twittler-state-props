@@ -51,7 +51,7 @@ const Tweets = () => {
             <div className="tweetForm__submit">
               <div className="tweetForm__submitIcon"></div>
               {/* TODO : 작성한 트윗을 전송할 수 있는 button 엘리먼트를 작성하세요. */}
-              <button>tweet</button>
+              <button className="tweetForm__submitButton">Tweet</button>
             </div>
           </div>
         </div>
