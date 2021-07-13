@@ -7,33 +7,33 @@ import dummyTweets from '../static/dummyData';
 
 const Tweets = () => {
   // TODO : 새로 트윗을 작성하고 전송할 수 있게 useState를 적절히 활용하세요.
-  const [유저정보목록, 유저정보목록변경] = useState(dummyTweets);
-  const [유저이름, 유저이름변경] = useState('');
-  const [내용, 내용변경] = useState('');
+  const [유저정보목록, set유저정보목록] = useState(dummyTweets);
+  const [유저이름, set유저이름] = useState('');
+  const [유저내용, set유저내용] = useState('');
 
   const handleButtonClick = (event) => {
     const tweet = {
       id: 9,
       username: 유저이름,
       picture: `https://randomuser.me/api/portraits/men/98.jpg`,
-      content: 내용,
+      content: 유저내용,
       createdAt: '2019-02-25T16:17:47.000Z',
       updatedAt: '2019-02-25T16:17:47.000Z',
     };
 
     // TODO : Tweet button 엘리먼트 클릭시 작동하는 함수를 완성하세요.
     // 트윗 전송이 가능하게 작성해야 합니다.
-    유저정보목록변경([tweet, ...유저정보목록]);
+    set유저정보목록([tweet, ...유저정보목록]);
   };
 
   const handleChangeUser = (event) => {
     // TODO : Tweet input 엘리먼트에  입력 시 작동하는 함수를 완성하세요.
-    유저이름변경(event.target.value);
+    set유저이름(event.target.value);
   };
 
   const handleChangeMsg = (event) => {
     // TODO : Tweet textarea 엘리먼트에 입력 시 작동하는 함수를 완성하세요.
-    내용변경(event.target.value);
+    set유저내용(event.target.value);
   };
 
   return (
@@ -58,7 +58,7 @@ const Tweets = () => {
                   className="tweetForm__input--message"
                   type="text"
                   placeholder="your message here.."
-                  defaultValue={내용}
+                  defaultValue={유저내용}
                   onChange={handleChangeMsg}
                 ></textarea>
               </div>
