@@ -11,11 +11,6 @@ const Tweets = () => {
   const [유저이름, 유저이름변경] = useState('');
   const [내용, 내용변경] = useState('');
 
-  function set(x) {
-    y = x;
-    return y;
-  }
-
   const handleButtonClick = (event) => {
     const tweet = {
       id: 9,
