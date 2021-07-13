@@ -20,7 +20,6 @@ const Tweets = () => {
       createdAt: '2019-02-25T16:17:47.000Z',
       updatedAt: '2019-02-25T16:17:47.000Z',
     };
-    asdfadsf;
 
     // TODO : Tweet button 엘리먼트 클릭시 작동하는 함수를 완성하세요.
     // 트윗 전송이 가능하게 작성해야 합니다.
