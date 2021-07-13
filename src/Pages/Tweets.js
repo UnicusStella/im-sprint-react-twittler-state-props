@@ -38,18 +38,20 @@ const Tweets = () => {
                   placeholder="your username here.."
                   className="tweetForm__input--username"
                 ></input>
-                TODO : 트윗을 작성할 수 있는 textarea 엘리먼트를 작성하세요.
+                {/* TODO : 트윗을 작성할 수 있는 textarea 엘리먼트를 작성하세요. */}
+                <textarea className="tweetForm__input--message"></textarea>
               </div>
               <div className="tweetForm__count" role="status">
                 <span className="tweetForm__count__text">
                   {/* TODO : 트윗 총 개수를 보여줄 수 있는 Counter를 작성하세요. */}
-                  {'total: '}
+                  total : {dummyTweets.length}
                 </span>
               </div>
             </div>
             <div className="tweetForm__submit">
               <div className="tweetForm__submitIcon"></div>
               {/* TODO : 작성한 트윗을 전송할 수 있는 button 엘리먼트를 작성하세요. */}
+              <button>tweet</button>
             </div>
           </div>
         </div>
