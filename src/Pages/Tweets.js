@@ -1,5 +1,5 @@
 // TODO : useState를 react로 부터 import 합니다.
-import React, { useState /* TODO */ } from 'react';
+import React, { useState } from 'react';
 import Footer from '../Footer';
 import Tweet from '../Components/Tweet';
 import './Tweets.css';
@@ -10,24 +10,20 @@ const Tweets = () => {
   const [tweetList, setTweetList] = useState(dummyTweets);
   const [user, setUser] = useState('');
   const [message, setMessage] = useState('');
-
   const handleButtonClick = (event) => {
-    const count = 5;
+    let count = 6;
     const tweet = {
       id: count,
-      username: { user },
+      username: user,
       picture: `https://randomuser.me/api/portraits/men/98.jpg`,
-      content: { message },
+      content: message,
       createdAt: '2019-02-25T16:17:47.000Z',
       updatedAt: '2019-02-25T16:17:47.000Z',
     };
-
     // TODO : Tweet button 엘리먼트 클릭시 작동하는 함수를 완성하세요.
     // 트윗 전송이 가능하게 작성해야 합니다.
-    console.log('event 는 ', event);
-    console.log('tweet 는 ', tweet);
-    console.log('tweetList 는 ', tweetList);
-    // setTweetList([tweet, ...tweetList]);
+    const newTweet = [tweet, ...tweetList];
+    setTweetList(newTweet);
   };
 
   const handleChangeUser = (event) => {
@@ -70,7 +66,7 @@ const Tweets = () => {
               <div className="tweetForm__count" role="status">
                 <span className="tweetForm__count__text">
                   {/* TODO : 트윗 총 개수를 보여줄 수 있는 Counter를 작성하세요. */}
-                  total: {tweetList.length}
+                  {'total: ' + tweetList.length}
                 </span>
               </div>
             </div>
@@ -91,7 +87,7 @@ const Tweets = () => {
       <ul className="tweets">
         {/* TODO : 하나의 트윗이 아니라, 주어진 트윗 목록(dummyTweets) 갯수에 맞게 보여줘야 합니다. */}
         {tweetList.map((el) => (
-          <Tweet tweet={el} ker={el.id} />
+          <Tweet tweet={el} key={el.id} />
         ))}
       </ul>
       <Footer />

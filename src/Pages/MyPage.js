@@ -10,7 +10,6 @@ const MyPage = () => {
   const filterPark = filteredTweets.filter(
     (el) => el.username === 'parkhacker'
   );
-
   return (
     <section className="myInfo">
       <div className="myInfo__container">
