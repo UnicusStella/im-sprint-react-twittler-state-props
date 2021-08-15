@@ -27,7 +27,7 @@ const Tweets = () => {
     console.log('event 는 ', event);
     console.log('tweet 는 ', tweet);
     console.log('tweetList 는 ', tweetList);
-    setTweetList([...tweetList, tweet]);
+    setTweetList([tweet, ...tweetList]);
   };
 
   const handleChangeUser = (event) => {
