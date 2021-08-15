@@ -29,7 +29,6 @@ const Tweets = () => {
   const handleChangeUser = (event) => {
     // TODO : Tweet input 엘리먼트에 입력 시 작동하는 함수를 완성하세요.
     setUser(event.target.value);
-    console.log('asdfad');
   };
 
   const handleChangeMsg = (event) => {
