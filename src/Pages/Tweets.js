@@ -27,14 +27,13 @@ const Tweets = () => {
     console.log('event 는 ', event);
     console.log('tweet 는 ', tweet);
     console.log('tweetList 는 ', tweetList);
-    setTweetList([tweet, ...tweetList]);
+    // setTweetList([tweet, ...tweetList]);
   };
 
   const handleChangeUser = (event) => {
     // TODO : Tweet input 엘리먼트에 입력 시 작동하는 함수를 완성하세요.
     setUser(event.target.value);
     console.log('asdfad');
-    console.log(handleButtonClick);
   };
 
   const handleChangeMsg = (event) => {
@@ -56,14 +55,15 @@ const Tweets = () => {
                   className="tweetForm__input--username"
                   defaultValue={user}
                   placeholder="your username here.."
-                  onChange={handleChangeUser}
                   type="text"
+                  onChange={handleChangeUser}
                 ></input>
                 {/* TODO : 트윗을 작성할 수 있는 textarea 엘리먼트를 작성하세요. */}
                 <textarea
                   className="tweetForm__input--message"
                   defaultValue={message}
                   placeholder="your message here.."
+                  type="text"
                   onChange={handleChangeMsg}
                 ></textarea>
               </div>
