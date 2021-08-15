@@ -12,7 +12,7 @@ const Tweets = () => {
   const [message, setMessage] = useState('');
 
   const handleButtonClick = (event) => {
-    const count = 0;
+    const count = 5;
     const tweet = {
       id: count,
       username: { user },
@@ -21,14 +21,20 @@ const Tweets = () => {
       createdAt: '2019-02-25T16:17:47.000Z',
       updatedAt: '2019-02-25T16:17:47.000Z',
     };
+
     // TODO : Tweet button 엘리먼트 클릭시 작동하는 함수를 완성하세요.
     // 트윗 전송이 가능하게 작성해야 합니다.
+    console.log('event 는 ', event);
+    console.log('tweet 는 ', tweet);
+    console.log('tweetList 는 ', tweetList);
+    setTweetList([...tweetList, tweet]);
   };
 
   const handleChangeUser = (event) => {
     // TODO : Tweet input 엘리먼트에 입력 시 작동하는 함수를 완성하세요.
-    console.log('test');
     setUser(event.target.value);
+    console.log('asdfad');
+    console.log(handleButtonClick);
   };
 
   const handleChangeMsg = (event) => {
@@ -47,11 +53,11 @@ const Tweets = () => {
             <div className="tweetForm__inputWrapper">
               <div className="tweetForm__input">
                 <input
-                  type="text"
+                  className="tweetForm__input--username"
                   defaultValue={user}
                   placeholder="your username here.."
-                  className="tweetForm__input--username"
                   onChange={handleChangeUser}
+                  type="text"
                 ></input>
                 {/* TODO : 트윗을 작성할 수 있는 textarea 엘리먼트를 작성하세요. */}
                 <textarea
@@ -73,9 +79,9 @@ const Tweets = () => {
               {/* TODO : 작성한 트윗을 전송할 수 있는 button 엘리먼트를 작성하세요. */}
               <button
                 className="tweetForm__submitButton"
-                onClick={handleChangeUser}
+                onClick={handleButtonClick}
               >
-                Twwet
+                Tweet
               </button>
             </div>
           </div>
