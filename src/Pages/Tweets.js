@@ -14,6 +14,7 @@ const Tweets = () => {
     const tweet = {};
     // TODO : Tweet button 엘리먼트 클릭시 작동하는 함수를 완성하세요.
     // 트윗 전송이 가능하게 작성해야 합니다.
+    console.log('test');
   };
 
   const handleChangeUser = (event) => {
@@ -53,12 +54,15 @@ const Tweets = () => {
               <div className="tweetForm__count" role="status">
                 <span className="tweetForm__count__text">
                   {/* TODO : 트윗 총 개수를 보여줄 수 있는 Counter를 작성하세요. */}
-                  {'total: '}
+                  total: {tweets.length}
                 </span>
               </div>
             </div>
             <div className="tweetForm__submit">
-              <div className="tweetForm__submitIcon"></div>
+              <div
+                className="tweetForm__submitIcon"
+                onClick={handleButtonClick}
+              ></div>
               {/* TODO : 작성한 트윗을 전송할 수 있는 button 엘리먼트를 작성하세요. */}
             </div>
           </div>
@@ -67,7 +71,9 @@ const Tweets = () => {
       <div className="tweet__selectUser"></div>
       <ul className="tweets">
         {/* TODO : 하나의 트윗이 아니라, 주어진 트윗 목록(dummyTweets) 갯수에 맞게 보여줘야 합니다. */}
-        <Tweet tweet={dummyTweets[0]} />
+        {tweets.map((tweets) => (
+          <Tweet tweet={tweets} key={tweets.id} />
+        ))}
       </ul>
       <Footer />
     </React.Fragment>
