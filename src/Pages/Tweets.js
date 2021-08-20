@@ -1,5 +1,5 @@
 // TODO : useState를 react로 부터 import 합니다.
-import React /* TODO */, { useState } from 'react';
+import React /* TODO */, { useEffect, useState } from 'react';
 import Footer from '../Footer';
 import Tweet from '../Components/Tweet';
 import './Tweets.css';
@@ -11,10 +11,17 @@ const Tweets = () => {
   const [userId, setUserId] = useState('');
   const [message, setMessage] = useState('');
   const handleButtonClick = (event) => {
-    const tweet = {};
+    const tweet = {
+      id: 6,
+      username: userId,
+      picture: `https://randomuser.me/api/portraits/men/98.jpg`,
+      content: message,
+      createdAt: '2019-02-25T16:17:47.000Z',
+      updatedAt: '2019-02-25T16:17:47.000Z',
+    };
     // TODO : Tweet button 엘리먼트 클릭시 작동하는 함수를 완성하세요.
     // 트윗 전송이 가능하게 작성해야 합니다.
-    console.log('test');
+    setTweets([tweet, ...tweets]);
   };
 
   const handleChangeUser = (event) => {
@@ -26,7 +33,7 @@ const Tweets = () => {
     // TODO : Tweet textarea 엘리먼트에 입력 시 작동하는 함수를 완성하세요.
     setMessage(event.target.value);
   };
-
+  // useEffect()
   return (
     <React.Fragment>
       <div className="tweetForm__container">
