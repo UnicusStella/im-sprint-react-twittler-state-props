@@ -42,6 +42,7 @@ const Tweets = () => {
                   defaultValue={userId}
                   placeholder="your username here.."
                   className="tweetForm__input--username"
+                  onChange={handleChangeUser}
                 ></input>
                 {/* TODO : 트윗을 작성할 수 있는 textarea 엘리먼트를 작성하세요. */}
                 <textarea
@@ -49,6 +50,7 @@ const Tweets = () => {
                   defaultValue={message}
                   placeholder="your message here.."
                   className="tweetForm__input--message"
+                  onChange={handleChangeMsg}
                 ></textarea>
               </div>
               <div className="tweetForm__count" role="status">
@@ -59,12 +61,14 @@ const Tweets = () => {
               </div>
             </div>
             <div className="tweetForm__submit">
-              <div
-                className="tweetForm__submitIcon"
-                onClick={handleButtonClick}
-              ></div>
+              <div className="tweetForm__submitIcon"></div>
               {/* TODO : 작성한 트윗을 전송할 수 있는 button 엘리먼트를 작성하세요. */}
-              <button className="tweetForm__submitButton">Tweet</button>
+              <button
+                className="tweetForm__submitButton"
+                onClick={handleButtonClick}
+              >
+                Tweet
+              </button>
             </div>
           </div>
         </div>
