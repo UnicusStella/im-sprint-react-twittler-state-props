@@ -74,7 +74,6 @@ const Tweets = () => {
               <button
                 className="tweetForm__submitButton"
                 onClick={handleButtonClick}
-                onChange={handleCount}
               >
                 Tweet
               </button>
