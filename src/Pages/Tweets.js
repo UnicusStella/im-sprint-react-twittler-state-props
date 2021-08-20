@@ -10,9 +10,10 @@ const Tweets = () => {
   const [tweets, setTweets] = useState(dummyTweets);
   const [userId, setUserId] = useState('');
   const [message, setMessage] = useState('');
+  const [idCount, setIdCount] = useState(6);
   const handleButtonClick = (event) => {
     const tweet = {
-      id: 6,
+      id: idCount,
       username: userId,
       picture: `https://randomuser.me/api/portraits/men/98.jpg`,
       content: message,
@@ -21,6 +22,7 @@ const Tweets = () => {
     };
     // TODO : Tweet button 엘리먼트 클릭시 작동하는 함수를 완성하세요.
     // 트윗 전송이 가능하게 작성해야 합니다.
+    setIdCount(idCount + 1);
     setTweets([tweet, ...tweets]);
   };
 
@@ -33,7 +35,6 @@ const Tweets = () => {
     // TODO : Tweet textarea 엘리먼트에 입력 시 작동하는 함수를 완성하세요.
     setMessage(event.target.value);
   };
-  // useEffect()
   return (
     <React.Fragment>
       <div className="tweetForm__container">
@@ -73,6 +74,7 @@ const Tweets = () => {
               <button
                 className="tweetForm__submitButton"
                 onClick={handleButtonClick}
+                onChange={handleCount}
               >
                 Tweet
               </button>
