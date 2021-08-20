@@ -18,10 +18,12 @@ const Tweets = () => {
 
   const handleChangeUser = (event) => {
     // TODO : Tweet input 엘리먼트에 입력 시 작동하는 함수를 완성하세요.
+    setUserId(event.target.value);
   };
 
   const handleChangeMsg = (event) => {
     // TODO : Tweet textarea 엘리먼트에 입력 시 작동하는 함수를 완성하세요.
+    setMessage(event.target.value);
   };
 
   return (
